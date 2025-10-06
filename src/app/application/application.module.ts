@@ -2,15 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import {NgbTooltipModule} from "@ng-bootstrap/ng-bootstrap";
-
+import { FormsModule } from '@angular/forms';
 import {ApplicationComponent} from './application.component';
 import {HomeComponent} from "../home/home.component";
 import {NavbarComponent} from "../navbar/navbar.component";
 import {AboutComponent} from "../about/about.component";
 import {QuoteComponent} from "../quote/quote.component";
 import {PortfolioComponent} from "../portfolio/portfolio.component";
-import {TrainingComponent} from "../training/training.component";
-import {AchievementComponent} from "../achievement/achievement.component";
+import {ExperienceComponent} from "../experience/experience.component";
+// import {TrainingComponent} from "../training/training.component"; // 
+// import {AchievementComponent} from "../achievement/achievement.component";
+import {EducationComponent} from "../education/education.component";
 import {ContactComponent} from "../contact/contact.component";
 import {SocialComponent} from "../social/social.component";
 import {FooterComponent} from "../footer/footer.component";
@@ -26,16 +28,20 @@ const routes: Routes = [{ path: '', component: ApplicationComponent }];
 		AboutComponent,
 		QuoteComponent,
 		PortfolioComponent,
-		TrainingComponent,
-		AchievementComponent,
+		// TrainingComponent,
+		ExperienceComponent,
+		EducationComponent,
 		ContactComponent,
 		SocialComponent,
 		FooterComponent
 	],
 	imports: [
-		RouterModule.forChild(routes),
+		// Change this line:
+		// RouterModule.forChild(routes), // Now uses the const 'routes'
+		RouterModule.forChild([{ path: '', component: ApplicationComponent }]),
 		CommonModule,
-		NgbTooltipModule
+		NgbTooltipModule,
+		FormsModule
 	]
 })
 export class ApplicationModule { }

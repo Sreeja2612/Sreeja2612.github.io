@@ -1,0 +1,113 @@
+<section 
+  class="section pointer experience-section position-relative" 
+  id="Experience" 
+  [ngClass]="{'experience-section-night': darkTheme}"
+>
+  <div class="experience-bg position-absolute top-0 left-0 width-full height-full"></div>
+
+  <img 
+    src="assets/images/{{experienceData['background']}}"
+    title="Experience Background Image"
+    class="experience-bg-cloud position-absolute bottom-0"
+    alt="Experience Background Image"
+    loading="lazy"
+  >
+
+  <div class="container z-1">
+    <div class="position-relative mb-6 mx-auto mx-md-0 width-175">
+
+      <!-- Sun -->
+      <div class="sun position-relative rounded-circle">
+        <div 
+          *ngFor="let sun of experienceData['sun']" 
+          class="sun-{{sun}} rounded-circle top-0 left-0 position-absolute"
+        ></div>
+      </div>
+
+      <!-- Develop Time -->
+      <div 
+        *ngFor="let developTime of experienceData['developTime']" 
+        class="develop-time develop-time-{{developTime['time']}} rounded-circle position-absolute"
+        [ngStyle]="{
+          'left': developTime['style']['left'],
+          'top': developTime['style']['top']
+        }"
+      ></div>
+
+      <!-- Moon -->
+      <div class="moon position-absolute top-0">
+        <div 
+          *ngFor="let dot of experienceData['moon']['dot']" 
+          class="moon-{{dot}} d-block rounded-circle position-absolute"
+        ></div>
+
+        <img 
+          *ngFor="let name of experienceData['moon']['name']" 
+          src="assets/images/{{name.toLowerCase()+'.svg'}}" 
+          alt="{{name.toLowerCase()}}" 
+          title="{{name.toLowerCase()}}"
+          class="{{name.toLowerCase()+'-svg'}} position-absolute"
+          loading="lazy"
+        >
+      </div>
+
+    </div>
+
+    <!-- Section Heading -->
+    <div class="row justify-content-center txt-bg txt-bg-experience">
+      <div class="col-lg-6">
+        <div class="section-title text-center mb-4 pb-2 wow fadeIn">
+          <div class="mb-5 pb-3">
+            <i class="fas fa-infinity h1 text-muted"></i>
+          </div>
+          <h2 class="h3 font-weight-bold" id="my-experience">My Experience</h2>
+          <p class="text-muted mx-auto mb-0 mt-4 para-desc">
+            Certifications and Work Profile
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience List -->
+    <div *ngFor="let experienceList of experienceData['experience']" class="row">
+      <div 
+        *ngFor="let experience of experienceList" 
+        class="col-lg-4 wow bounceIn{{experience['class']}}"
+      >
+        <div class="experience-flip-box mt-4 pt-2">
+
+          <!-- Front Side -->
+          <div class="experience-front-flip text-center p-5">
+            <div class="experience-desc">
+              <h3 class="h5 font-weight-bold mb-3">{{experience['title']}}</h3>
+              <p class="text-muted mb-0">{{experience['subtitle']}}</p>
+              <p class="text-muted mb-0">{{experience['date']}}</p>
+            </div>
+          </div>
+
+          <!-- Back Side -->
+          <div class="experience-back-flip text-center text-white p-4">
+            <div class="mb-1">{{experience['description']}}</div>
+            <br>
+            <ng-template #title>
+              <strong><em>Certificate Link</em></strong>
+            </ng-template>
+            <!-- <a
+              rel="noreferrer"
+              aria-label="certificate(opens in a new tab)"
+              href="https://drive.google.com/file/d/{{experience['link']}}/view?usp=sharing"
+              target="_blank"
+              class="btn btn-round p-2 certificate-button"
+              placement="bottom"
+              [ngbTooltip]="title"
+            >
+              Certificate Link
+            </a> -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
