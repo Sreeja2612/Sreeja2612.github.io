@@ -49,7 +49,7 @@
 
 <p align="center">
   <a href="https://Sreeja2612.github.io/">
-    <img src="src/screenshots/screenshot.gif" alt="landing page"/>
+    <!-- <img src="src/screenshots/screenshot.gif" alt="landing page"/> -->
   </a>
 </p>
 
@@ -265,8 +265,8 @@ docker --version
 	- Skill
 	- Education
 - Portfolio
-- Training
-- Achievement
+- Experience
+- Education
 - Contact
 
 
@@ -328,10 +328,10 @@ docker --version
     |   |       about.component.html
     |   |       about.component.ts
     |   |       
-    |   +---achievement
-    |   |       achievement.component.css
-    |   |       achievement.component.html
-    |   |       achievement.component.ts
+    |   +---education
+    |   |       education.component.css
+    |   |       education.component.html
+    |   |       education.component.ts
     |   |       
     |   +---application
     |   |       application.component.css
@@ -438,10 +438,10 @@ docker --version
     |   |   |   quote-img.webp
     |   |   |   safari-pinned-tab.svg
     |   |   |   
-    |   |   +---achievement
-    |   |   |       DataScience.webp
-    |   |   |       HackerRank.webp
-    |   |   |       Hacktoberfest.webp
+    |   |   +---education
+    |   |   |       B.tech.webp
+    |   |   |       Diploma.webp
+    |   |   |       University.webp
     |   |   |       
     |   |   \---portfolio
     |   |           A-Social-Media.webp
